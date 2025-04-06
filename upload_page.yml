@@ -1,0 +1,11 @@
+---
+- name: Upload custom html page
+  hosts: debian_nodes
+  become: true
+
+  tasks:
+    - name: Copy custo index.html file to web server
+      copy:
+        src: web_content/index.html
+        dest: /var/www/html/index.html
+        mode: "0644"
