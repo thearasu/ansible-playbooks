@@ -1,0 +1,16 @@
+---
+- name: Install multipe useful packages
+  hosts: debian_nodes
+  become: true
+
+  tasks:
+    - name: Install multipe packages in loop
+      apt:
+        name: "{{ item }}"
+        state: present
+        update_cache: yes
+      loop:
+        - curl
+        - vim
+        - htop
+        - net-tools
