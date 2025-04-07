@@ -1,0 +1,7 @@
+---
+- name: Apply common server setup
+  hosts: debian_nodes
+  become: true
+
+  roles:
+   - common

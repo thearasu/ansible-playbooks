@@ -1,0 +1,7 @@
+---
+- name: Use apache role
+  hosts: debian_nodes
+  become: yes
+
+  roles:
+    - apache_web
