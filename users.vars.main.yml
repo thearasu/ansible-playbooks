@@ -1,0 +1,11 @@
+---
+users_to_create:
+  - name: devdude
+    shell: /bin/bash
+    groups: sudo
+    ssh_key: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILM7wacIfi8aa/iF7ru0pVy1Tul/LcnmpGzh8ScT2Yov ea@ews"
+
+  - name: guestuser
+    shell: /bin/bash
+    groups: ""
+    ssh_key: ""

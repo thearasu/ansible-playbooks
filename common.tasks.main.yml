@@ -1,0 +1,21 @@
+---
+- name: Install essential packages
+  apt:
+    name: "{{ item }}"
+    state: present
+    update_cache: yes
+  loop:
+    - vim
+    - curl
+    - htop
+    - net-tools
+    - tree
+- name: Set timezone to Asia/Kolkata
+  timezone:
+    name: Asia/Kolkata
+
+- name: Set custom messages of the day
+  copy:
+    src: motd
+    dest: /etc/motd
+    mode: '0644'

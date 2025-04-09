@@ -1,0 +1,7 @@
+---
+- name: Create users securely
+  hosts: debian_hosts
+  become: true
+
+  roles:
+    - users

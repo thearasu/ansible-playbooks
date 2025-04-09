@@ -1,0 +1,16 @@
+---
+- name: Enure users are present
+  user:
+    name: "{{item.name}}"
+    shell: "{{item.shell}}"
+    groups: "{{item.groups}}"
+    state: present
+    create_home: yes
+  loop: "{{users_to_create}}"
+
+- name: Set authorized-key for users
+  authorized_key:
+    user: "{{item.name}}"
+    key: "{{item.ssh_key}}"
+  when: item.ssh_key != ""
+  loop: "{{users_to_create}}"
