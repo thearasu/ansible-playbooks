@@ -1,0 +1,7 @@
+---
+- name: Ensure apache is installed and restarted
+  hosts: debian_nodes
+  become: true
+
+  roles:
+  - apache

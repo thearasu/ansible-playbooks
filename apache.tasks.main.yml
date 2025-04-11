@@ -1,0 +1,8 @@
+---
+- name: Ensure apache is installed
+  apt:
+    name: apache2
+    state: present
+    update_cache: yes
+  notify: restart apache
+    
